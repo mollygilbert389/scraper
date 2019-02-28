@@ -16,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI);
+
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -24,10 +27,6 @@ app.set("view engine", "handlebars");
 app.get("/", function(req, res) {
   res.render("index");
 });
-
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
-mongoose.connect(MONGODB_URI);
 
 app.get("/scrape", function(req, res) {
   axios.get("http://www.echojs.com/").then(function(response) {
