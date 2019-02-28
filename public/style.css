@@ -1,6 +1,12 @@
 
 body { 
-    background-color: #F2F6D0 
+    background-image:url("https://www.austockphoto.com.au/imgcache/uploads/photos/compressed/background-of-a-crumpled-paper-bag-austockphoto-000008598.JPG?v=1.2.3");
+    text-align: center;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Laila', serif;
 }
 
 #wrapper {
@@ -14,21 +20,44 @@ body {
   overflow: auto;
   width: 60%;
   height: 700px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: whitesmoke;
+  padding: 10px;
 }
 #notes {
   float: right;
   width: 30%;
+
 }
 textarea, input {
   display: block;
   width: 100%;
-  background-color: #FCF5C7;
+  background-color:whitesmoke;
+  text-align: center;
+  border-radius: 8px;
 }
 input {
   height: 36px;
   font-size: 24px;
+  margin-bottom: 10px;
+  border: none;
 }
 textarea {
   height: 200px;
   font-size: 18px;
+  border: none;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    font-family: 'Laila', serif;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    color: whitesmoke;
 }
