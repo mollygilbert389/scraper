@@ -57,7 +57,15 @@ button {
     transition-duration: 0.4s;
 }
 
-button:hover {
+#savenote {
+    margin-right: 5px;
+}
+
+#savenote:hover {
     background-color: #4CAF50;
+    color: whitesmoke;
+}
+#deletenote:hover {
+    background-color: red;
     color: whitesmoke;
 }

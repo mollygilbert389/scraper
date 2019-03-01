@@ -21,6 +21,7 @@ $.getJSON("/articles", function(data) {
         $("#notes").append("<input id='titleinput' name='title' >");
         $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
         $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Add dat note!</button>");
+        $("#notes").append("<button data-id='" + data._id + "' id='deletenote'>Delete</button>");
   
         if (data.note) {
           $("#titleinput").val(data.note.title);
@@ -48,3 +49,9 @@ $.getJSON("/articles", function(data) {
     $("#titleinput").val("");
     $("#bodyinput").val("");
   });
+
+$(document).on("click", "#deletenote", function() {
+    var thisId = $(this).attr("data-id");   
+      $("#titleinput").val("");
+      $("#bodyinput").val("");
+})
